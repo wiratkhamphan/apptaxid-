@@ -1,0 +1,75 @@
+
+
+.Branch_TAX_ID{
+    padding: 10px 16px;
+    background-color: #007bff;
+    color: #fff;
+ 
+}
+
+.appTaxid,
+.selectTax,
+.cancel,
+.Save{
+    padding: 7px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.appTaxid {
+    background-color: #33ff00;
+    color: #fff;
+}
+
+.appTaxid:hover {
+    background-color: #74C686;
+}
+.selectTax {
+    
+    background-color: #007bff;
+    color: #fff;
+    
+}
+
+.selectTax:hover {
+    background-color: #0056b3;
+}
+
+.cancel {
+    background-color: #f80606;
+    color: #ffffff;
+}
+
+.cancel:hover {
+    background-color: #f02727;
+}
+.Save {
+    background-color: #33ff00;
+    color: #fff;
+}
+
+.Save:hover {
+    background-color: #74C686;
+}
+
+.content fieldset {
+    border: none; /* ลบเส้นขอบของ fieldset */
+}
+
+.content label {
+    display: block; /* แสดง label ในบรรทัดใหม่ */
+    margin-bottom: 5px; /* เพิ่มระยะห่างด้านล่างของ label */
+}
+
+.content input[type="text"],
+.content input[type="int"],
+.content input[type="file"] {
+    width: 100%; /* ทำให้ input กรอกข้อมูลเต็มความกว้างของ fieldset */
+    padding: 5px; /* เพิ่มช่องว่างรอบขอบของ input */
+    margin-bottom: 10px; /* เพิ่มระยะห่างด้านล่างของ input */
+}
+
+.content input[type="file"] {
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นแสดงว่าเป็นปุ่มกด */
+}
