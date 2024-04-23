@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <title>โปรแกรมร้องขอเพิ่มฐานข้อมูลหมายเลขประจำตัวผู้เสียภาษี (Tax ID)</title>
     <style>
@@ -128,7 +129,6 @@
                                     <th>วันที่ </th>
                                     <th>ชื่อลูกค้า</th>
                                     <th>Tax ID </th>
-                                    <th>ชื่อลูกค้า</th>
                                     <th>สถานะ</th>
                                     <th>ผู้บันทึก</th>
                                     <th>ผู้ตรวจสอบ</th>
@@ -198,7 +198,37 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-
+    <script>
+        $(document).ready(function () {
+            // Make AJAX request to fetch data
+            $.ajax({
+                url: 'http://localhost:8080/Getapptaxid',
+                method: 'GET',
+                success: function (response) {
+                    // Iterate over each data object and populate the table
+                    response.forEach(function (data) {
+                        $('#main-list').append(
+                            '<tr>' +
+                            '<td><input type="checkbox" disabled></td>' +
+                            '<td>' + data.request_no + '</td>' +
+                            '<td>' + data.date_time + '</td>' +
+                            '<td>' + data.name_customer + '</td>' +
+                            '<td>' + data.tax_id + '</td>' +
+                            '<td>' + data.status + '</td>' +
+                            '<td>' + data.recorder + '</td>' +
+                            '<td>' + data.inspector + '</td>' +
+                            '<td>' + data.attached_documents + '</td>' +
+                            '<td>' + data.note + '</td>' +
+                            '</tr>'
+                        );
+                    });
+                },
+                error: function (xhr, status, error) {
+                    console.error('Error fetching data:', error);
+                }
+            });
+        });
+    </script>
 
 </body>
 

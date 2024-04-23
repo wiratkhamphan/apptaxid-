@@ -1,20 +1,16 @@
 package router
 
 import (
-	"apptaxid/src/router/Branch/apptaxid"
+	branch "apptaxid/src/router/Branch"
 
-	"github.com/gofiber/fiber"
+	"github.com/gofiber/fiber/v2"
 )
 
 func Router_Branch() {
 	app := fiber.New()
 
 	// Initialize routes
-	SetupRoutes(app)
-
+	branch.SetupRoutes_branch(app)
 	// Start the server
-	app.Listen(":3000")
-}
-func SetupRoutes(app *fiber.App) {
-	app.Post("/apptaxid", apptaxid.Postapptaxid)
+	app.Listen(":8080")
 }
